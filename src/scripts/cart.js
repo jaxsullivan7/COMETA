@@ -296,6 +296,11 @@ function mostrarVista(nueva) {
   if (accionesDatos) accionesDatos.hidden = !enDatos;
   if (titulo) titulo.textContent = enDatos ? "Datos del pedido" : "La cesta";
 
+  document.querySelectorAll("[data-cart-note]").forEach((el) => {
+    const esPrecios = el.dataset.cartNote === "precios";
+    el.hidden = enDatos || (esPrecios && !preciosProvisionales);
+  });
+
   if (enDatos) {
     document.getElementById("ck-nombre")?.focus();
   } else if (carrito.length > 0) {
@@ -562,12 +567,6 @@ window.addEventListener("storage", (event) => {
     pintar();
   }
 });
-
-if (preciosProvisionales) {
-  document.querySelectorAll("[data-aviso-precios]").forEach((el) => {
-    el.hidden = false;
-  });
-}
 
 // Restaura los datos del pedido anterior, si los hay.
 if (formulario) {

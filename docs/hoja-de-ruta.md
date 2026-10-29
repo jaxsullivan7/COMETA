@@ -20,6 +20,7 @@ proyecto sin tener que reconstruirla después.
 | 0 | Entorno, Node portable, repositorio y despliegue de prueba | En curso |
 | 1 | Sistema de diseño y componentes base | Hecho |
 | 2 | Portada, tienda por categorías, historia y contacto | Hecho |
+| 2b | Experiencia móvil: barra inferior, rejilla de 2 columnas y carruseles | Hecho |
 | 3 | Contenido real: fotos, tallas, precios y textos | Pendiente |
 | 4 | Carrito y checkout por WhatsApp | Hecho (pendiente número real) |
 | 5 | Newsletter y formulario conectados | Pendiente |

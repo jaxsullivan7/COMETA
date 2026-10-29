@@ -12,6 +12,7 @@ import "../styles/global.css";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BottomNav from "../components/BottomNav.astro";
 import CartDrawer from "../components/CartDrawer.astro";
 import { enlaces, preciosProvisionales } from "../data/site";
 
@@ -50,7 +51,10 @@ const jsonLd = {
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <title>{tituloCompleto}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.toString()} />
@@ -85,7 +89,7 @@ const jsonLd = {
     </noscript>
   </head>
   <body
-    class="min-h-screen bg-cream text-ink antialiased"
+    class="mobile-nav-space min-h-screen bg-cream text-ink antialiased"
     data-whatsapp={enlaces.whatsapp}
     data-email={enlaces.email}
     data-precios={String(preciosProvisionales)}
@@ -103,6 +107,8 @@ const jsonLd = {
     </main>
 
     <Footer />
+
+    <BottomNav />
 
     <CartDrawer />
 

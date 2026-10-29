@@ -59,6 +59,7 @@ assets/brand/     Original de la cartelera y recortes de trabajo
 - [x] Base técnica y sistema de diseño
 - [x] Home, tienda con filtros por categoría, historia, contacto y legales
 - [x] Navegación responsive y animaciones de entrada
+- [x] Versión móvil con barra inferior, carruseles y productos a dos columnas
 - [x] Carrito con persistencia local, cantidades y total
 - [x] Datos de contacto y notas antes de enviar el pedido
 - [x] Pedido por WhatsApp, correo o copia al portapapeles
@@ -67,6 +68,25 @@ assets/brand/     Original de la cartelera y recortes de trabajo
 - [ ] Newsletter conectada a un proveedor
 - [ ] Formulario de contacto conectado a un correo real
 - [ ] Dominio definitivo y despliegue
+
+## Experiencia móvil
+
+La web está pensada primero para el teléfono:
+
+- Barra inferior fija con Inicio, Tienda, Cesta (con contador) y Contacto.
+- Cabecera compacta: menú a la izquierda, logotipo centrado y cesta a la derecha.
+- Categorías en carrusel horizontal y filtros deslizables.
+- Productos a dos columnas, con botón «Añadir» de 44 px.
+- Cesta a pantalla completa y campos de 16 px para evitar el zoom automático de iOS.
+- Respeto al `safe-area` en la barra inferior y en la cesta.
+
+Capturas y comprobaciones en tamaño 390 × 844:
+
+```powershell
+npm run preview        # en una terminal
+npm run shots          # capturas en la carpeta temporal
+npm run check:mobile   # desbordamientos, menú y contadores
+```
 
 ## Carrito y pedidos
 

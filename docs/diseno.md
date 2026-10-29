@@ -65,3 +65,14 @@ etiquetas 10–12 px con tracking amplio (0,18–0,28 em).
 3. Bordes redondeados amplios (20–32 px) y sombras muy suaves.
 4. Líneas doradas de 1 px como separadores, nunca cajas duras.
 5. Nada de emojis en la interfaz; los iconos son SVG de línea.
+
+## Móvil
+
+- Punto de partida de 390 × 844 y rejilla de 2 columnas desde 360 px.
+- Barra inferior fija de 68 px con iconos de 20 px y etiquetas de 8,8 px.
+- Cabecera de 56 px con menú, logotipo y cesta.
+- Carrusel de categorías al 78 % del ancho para dejar ver la siguiente.
+- Botones táctiles de 44 px mínimo; los campos de texto nunca bajan de 16 px.
+- `env(safe-area-inset-bottom)` en la barra y en el pie de la cesta.
+- Las secciones reducen su padding vertical a 56–80 px antes de `lg`.
+

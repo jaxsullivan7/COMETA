@@ -13,7 +13,7 @@ import { productos, preciosProvisionales } from "../data/site";
 
 <aside
   id="cart-drawer"
-  class="fixed inset-y-0 right-0 z-[71] flex w-full max-w-[26rem] translate-x-full flex-col bg-cream shadow-float transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)]"
+  class="fixed right-0 top-0 z-[71] flex h-dvh w-full max-w-[26rem] translate-x-full flex-col bg-cream shadow-float transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)]"
   role="dialog"
   aria-modal="true"
   aria-labelledby="cart-title"
@@ -47,7 +47,7 @@ import { productos, preciosProvisionales } from "../data/site";
     </button>
   </header>
 
-  <div class="flex-1 overflow-y-auto px-5">
+  <div class="flex-1 overflow-y-auto overscroll-contain px-5">
     <!-- Vista 1: cesta -->
     <div id="cart-view" class="h-full">
       <ul id="cart-items" class="h-full"></ul>
@@ -179,19 +179,19 @@ import { productos, preciosProvisionales } from "../data/site";
     </div>
   </div>
 
-  <footer class="border-t border-gold/15 bg-cream-soft px-5 py-5">
+  <footer class="border-t border-gold/15 bg-cream-soft px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5">
     <div class="flex items-baseline justify-between">
       <span class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-ink-soft">Total</span>
       <span id="cart-total" class="font-display text-2xl text-ink">0,00 €</span>
     </div>
 
     {preciosProvisionales && (
-      <p data-aviso-precios hidden class="mt-1 text-[0.65rem] text-ink-muted">
+      <p data-cart-note="precios" hidden class="mt-1 text-[0.65rem] text-ink-muted">
         Precios orientativos pendientes de confirmar.
       </p>
     )}
 
-    <p class="mt-1 text-[0.65rem] leading-relaxed text-ink-muted">
+    <p data-cart-note="envio" class="mt-1 text-[0.65rem] leading-relaxed text-ink-muted">
       El envío y las tallas se confirman al preparar el pedido.
     </p>
 
