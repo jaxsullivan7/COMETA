@@ -44,7 +44,7 @@ export interface Producto {
   nombre: string;
   categoria: Categoria;
   descripcion: string;
-  /** Precio en euros. Provisional hasta que Vanesa confirme la tarifa. */
+  /** Precio en euros. Provisional hasta que Vanessa confirme la tarifa. */
   precio: number;
 }
 
@@ -114,12 +114,19 @@ export const productos: Producto[] = [
   },
 ];
 
+/**
+ * Deja el número en el formato que espera wa.me: solo dígitos y sin prefijo 00.
+ * Así se puede pegar tal cual desde la agenda o WhatsApp.
+ */
+const normalizarWhatsapp = (valor: string) =>
+  valor.replace(/[^\d]/g, "").replace(/^00/, "");
+
 export const enlaces = {
   instagram: "https://www.instagram.com/",
   email: "hola@cometa.es",
   emailPlaceholder: true,
-  /** Añadir el número en formato internacional sin + ni espacios, ej. 34600123456. */
-  whatsapp: "",
+  /** Añadir el número de WhatsApp con prefijo de país: "+34 600 123 456", "0034 600…" o "34600123456". */
+  whatsapp: normalizarWhatsapp(""),
 };
 
 export const navegacion = [

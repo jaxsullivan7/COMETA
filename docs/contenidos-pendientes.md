@@ -1,4 +1,4 @@
-# Contenidos pendientes de Vanesa
+# Contenidos pendientes de Vanessa
 
 Lista viva de todo lo que hace falta para pasar de la maqueta a la tienda real.
 Los elementos marcados con 🔴 bloquean la apertura.
@@ -23,7 +23,8 @@ Los elementos marcados con 🔴 bloquean la apertura.
 
 - 🔴 Condiciones de envío (coste, plazo, agencia).
 - 🔴 Política de devoluciones y cambios.
-- 🔴 Teléfono o WhatsApp de atención (el carrito lo activa automáticamente).
+- 🔴 Teléfono o WhatsApp de atención (el carrito se activa solo; ver
+  `docs/activar-whatsapp.md`).
 - 🟡 Horario de atención y dirección física, si la habrá.
 
 ## Legal (España)

@@ -117,16 +117,16 @@ teléfono** (obligatorios) y, opcionalmente, correo y notas (talla, dedicatoria,
 fecha…). Los datos se validan, se guardan en el navegador para la próxima compra
 y se incluyen en el mensaje junto al resumen de piezas y el total.
 
-Para activar el botón **Pedir por WhatsApp**, rellena el número en formato
-internacional sin `+` ni espacios:
+Para activar el botón **Enviar pedido por WhatsApp**, pon el número en
+`src/data/site.ts`:
 
 ```ts
-// src/data/site.ts
-export const enlaces = {
-  whatsapp: "34600123456",
-  // ...
-};
+whatsapp: normalizarWhatsapp("+34 600 123 456"),
 ```
+
+Acepta el número tal cual se copia de la agenda: con `+34`, espacios, guiones o
+prefijo `00`. El proyecto lo normaliza a solo dígitos. Guía completa paso a paso
+en [`docs/activar-whatsapp.md`](docs/activar-whatsapp.md).
 
 Mientras esté vacío, la cesta ofrece **Copiar pedido** y **Enviar por correo**
 como alternativa, para que la tienda pueda recibir pedidos desde el primer día.
@@ -139,7 +139,9 @@ por los definitivos, pon esa constante en `false` y el aviso desaparecerá.
 - [`docs/diseno.md`](docs/diseno.md) — paleta, tipografía y componentes.
 - [`docs/hoja-de-ruta.md`](docs/hoja-de-ruta.md) — fases y su reflejo en Jira.
 - [`docs/contenidos-pendientes.md`](docs/contenidos-pendientes.md) — lo que
-  falta por decidir con Vanesa.
+  falta por decidir con Vanessa.
+- [`docs/activar-whatsapp.md`](docs/activar-whatsapp.md) — cómo activar el
+  pedido por WhatsApp en cuanto llegue el número.
 
 ## Repositorio y gestión
 
