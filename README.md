@@ -7,6 +7,8 @@ fases.
 
 > «Ropa para cada etapa de su historia.»
 
+**Web en producción:** <https://cometa-alpha.vercel.app>
+
 ![Vista previa de la portada de COMETA](docs/preview-home.jpg)
 
 ## Stack
@@ -141,5 +143,6 @@ por los definitivos, pon esa constante en `false` y el aviso desaparecerá.
 
 ## Repositorio y gestión
 
+- Web: <https://cometa-alpha.vercel.app>
 - GitHub: <https://github.com/jaxsullivan7/COMETA>
 - Jira: proyecto `COM` en <https://jaxsullivan7.atlassian.net>
