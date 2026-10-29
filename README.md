@@ -7,6 +7,8 @@ fases.
 
 > «Ropa para cada etapa de su historia.»
 
+![Vista previa de la portada de COMETA](docs/preview-home.jpg)
+
 ## Stack
 
 - [Astro](https://astro.build) 5 — generación estática, HTML mínimo y navegación
