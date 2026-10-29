@@ -13,6 +13,8 @@ Los elementos marcados con 🔴 bloquean la apertura.
 
 ## Catálogo
 
+- 🔴 Exportación CSV del catálogo de Catinfog (una línea por talla) y fotos de
+  los productos. Ver `docs/catinfog.md`.
 - 🔴 Fotos de producto: 4:5, luz natural, fondo neutro.
 - 🔴 Nombres, descripciones, composición y cuidados de cada prenda.
 - 🔴 Precios y tallas disponibles.

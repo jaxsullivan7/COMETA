@@ -142,6 +142,8 @@ por los definitivos, pon esa constante en `false` y el aviso desaparecerá.
   falta por decidir con Vanessa.
 - [`docs/activar-whatsapp.md`](docs/activar-whatsapp.md) — cómo activar el
   pedido por WhatsApp en cuanto llegue el número.
+- [`docs/catinfog.md`](docs/catinfog.md) — plan de integración del catálogo
+  con el TPV Catinfog.
 
 ## Repositorio y gestión
 
