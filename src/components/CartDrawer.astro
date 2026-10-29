@@ -1,0 +1,124 @@
+---
+import { productos, preciosProvisionales } from "../data/site";
+---
+
+<div
+  id="cart-overlay"
+  class="fixed inset-0 z-[70] bg-ink/35 opacity-0 backdrop-blur-[2px] transition-opacity duration-300"
+  data-cart-close
+  aria-hidden="true"
+  hidden
+>
+</div>
+
+<aside
+  id="cart-drawer"
+  class="fixed inset-y-0 right-0 z-[71] flex w-full max-w-[26rem] translate-x-full flex-col bg-cream shadow-float transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)]"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cart-title"
+  aria-hidden="true"
+  inert
+>
+  <header class="flex items-start justify-between border-b border-gold/15 px-5 py-5">
+    <div>
+      <p class="eyebrow">Tu selección</p>
+      <h2 id="cart-title" class="mt-1 font-display text-3xl leading-none text-ink">
+        La cesta
+      </h2>
+      <p
+        id="cart-status"
+        class="mt-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-ink-muted"
+        aria-live="polite"
+      >
+        Cesta vacía
+      </p>
+    </div>
+
+    <button
+      id="cart-close"
+      type="button"
+      class="grid h-9 w-9 place-items-center rounded-full border border-gold/25 text-ink transition-colors hover:border-gold hover:text-gold-deep"
+      aria-label="Cerrar la cesta"
+    >
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+      </svg>
+    </button>
+  </header>
+
+  <div class="flex-1 overflow-y-auto px-5">
+    <ul id="cart-items" class="h-full"></ul>
+  </div>
+
+  <footer class="border-t border-gold/15 bg-cream-soft px-5 py-5">
+    <div class="flex items-baseline justify-between">
+      <span class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-ink-soft">Total</span>
+      <span id="cart-total" class="font-display text-2xl text-ink">0,00 €</span>
+    </div>
+
+    {preciosProvisionales && (
+      <p data-aviso-precios hidden class="mt-1 text-[0.65rem] text-ink-muted">
+        Precios orientativos pendientes de confirmar.
+      </p>
+    )}
+
+    <p class="mt-1 text-[0.65rem] leading-relaxed text-ink-muted">
+      El envío y las tallas se confirman al preparar el pedido.
+    </p>
+
+    <div class="mt-4 flex flex-col gap-2">
+      <a
+        data-cart-whatsapp
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary w-full"
+        hidden
+      >
+        Pedir por WhatsApp
+      </a>
+
+      <button data-cart-copy type="button" class="btn btn-primary w-full" hidden>
+        Copiar pedido
+      </button>
+
+      <a data-cart-mail href="#" class="btn btn-outline w-full" hidden>
+        Enviar por correo
+      </a>
+
+      <button
+        data-cart-clear
+        type="button"
+        class="mt-1 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-ink-muted underline-offset-4 transition-colors hover:text-gold-deep hover:underline"
+        hidden
+      >
+        Vaciar cesta
+      </button>
+    </div>
+
+    <p
+      id="cart-msg"
+      role="status"
+      class="mt-2 min-h-4 text-center text-[0.7rem] font-semibold text-gold-deep"
+    >
+    </p>
+  </footer>
+</aside>
+
+<script
+  type="application/json"
+  id="cometa-productos"
+  set:html={JSON.stringify(
+    productos.map(({ id, nombre, categoria, precio }) => ({
+      id,
+      nombre,
+      categoria,
+      precio,
+    })),
+  )}
+/>
+
+<script>
+  import "../scripts/cart.js";
+</script>

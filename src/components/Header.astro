@@ -70,6 +70,25 @@ const esActiva = (href: string) =>
             <circle cx="17.2" cy="6.8" r="1" fill="currentColor"></circle>
           </svg>
         </a>
+
+        <button
+          type="button"
+          data-cart-open
+          class="relative grid h-9 w-9 place-items-center text-ink-soft transition-colors hover:text-gold-deep"
+          aria-label="Abrir la cesta"
+        >
+          <svg class="h-[1.15rem] w-[1.15rem]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 8h12l-1 11H7L6 8Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+            <path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path>
+          </svg>
+          <span
+            data-cart-count
+            hidden
+            class="absolute -right-1.5 -top-1.5 grid h-4 min-w-4 place-items-center rounded-full bg-gold px-1 text-[0.5rem] font-bold leading-none text-cream-soft"
+          >
+            0
+          </span>
+        </button>
       </div>
     </div>
 
@@ -100,6 +119,26 @@ const esActiva = (href: string) =>
             <circle cx="17.2" cy="6.8" r="1" fill="currentColor"></circle>
           </svg>
         </a>
+
+        <button
+          type="button"
+          data-cart-open
+          class="relative grid h-10 w-10 place-items-center text-ink-soft"
+          aria-label="Abrir la cesta"
+        >
+          <svg class="h-[1.15rem] w-[1.15rem]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 8h12l-1 11H7L6 8Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+            <path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path>
+          </svg>
+          <span
+            data-cart-count
+            hidden
+            class="absolute right-0 top-0 grid h-4 min-w-4 place-items-center rounded-full bg-gold px-1 text-[0.5rem] font-bold leading-none text-cream-soft"
+          >
+            0
+          </span>
+        </button>
+
         <button
           id="menu-toggle"
           type="button"

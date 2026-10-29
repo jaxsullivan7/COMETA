@@ -23,7 +23,7 @@ Los elementos marcados con 🔴 bloquean la apertura.
 
 - 🔴 Condiciones de envío (coste, plazo, agencia).
 - 🔴 Política de devoluciones y cambios.
-- 🟡 Teléfono o WhatsApp de atención.
+- 🔴 Teléfono o WhatsApp de atención (el carrito lo activa automáticamente).
 - 🟡 Horario de atención y dirección física, si la habrá.
 
 ## Legal (España)

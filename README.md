@@ -59,11 +59,36 @@ assets/brand/     Original de la cartelera y recortes de trabajo
 - [x] Base técnica y sistema de diseño
 - [x] Home, tienda con filtros por categoría, historia, contacto y legales
 - [x] Navegación responsive y animaciones de entrada
-- [ ] Fotos y precios reales del catálogo
-- [ ] Carrito y checkout (WhatsApp o pasarela)
+- [x] Carrito con persistencia local, cantidades y total
+- [x] Pedido por WhatsApp, correo o copia al portapapeles
+- [ ] Número de WhatsApp real (al rellenarlo se activa el botón)
+- [ ] Fotos y precios definitivos del catálogo
 - [ ] Newsletter conectada a un proveedor
 - [ ] Formulario de contacto conectado a un correo real
 - [ ] Dominio definitivo y despliegue
+
+## Carrito y pedidos
+
+La cesta se guarda en `localStorage` (clave `cometa:cesta:v1`): sobrevive a
+recargas y se sincroniza entre pestañas. El importe se calcula siempre con los
+precios de `src/data/site.ts`, nunca con lo que haya guardado el navegador.
+
+Para activar el botón **Pedir por WhatsApp**, rellena el número en formato
+internacional sin `+` ni espacios:
+
+```ts
+// src/data/site.ts
+export const enlaces = {
+  whatsapp: "34600123456",
+  // ...
+};
+```
+
+Mientras esté vacío, la cesta ofrece **Copiar pedido** y **Enviar por correo**
+como alternativa, para que la tienda pueda recibir pedidos desde el primer día.
+
+Los precios actuales son orientativos (`preciosProvisionales`). Al cambiarlos
+por los definitivos, pon esa constante en `false` y el aviso desaparecerá.
 
 ## Documentación
 

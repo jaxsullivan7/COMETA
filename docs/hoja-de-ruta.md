@@ -21,7 +21,7 @@ proyecto sin tener que reconstruirla después.
 | 1 | Sistema de diseño y componentes base | Hecho |
 | 2 | Portada, tienda por categorías, historia y contacto | Hecho |
 | 3 | Contenido real: fotos, tallas, precios y textos | Pendiente |
-| 4 | Carrito y checkout por WhatsApp | Pendiente |
+| 4 | Carrito y checkout por WhatsApp | Hecho (pendiente número real) |
 | 5 | Newsletter y formulario conectados | Pendiente |
 | 6 | Legal definitivo, dominio y analítica | Pendiente |
 
