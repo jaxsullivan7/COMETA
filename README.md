@@ -60,6 +60,7 @@ assets/brand/     Original de la cartelera y recortes de trabajo
 - [x] Home, tienda con filtros por categoría, historia, contacto y legales
 - [x] Navegación responsive y animaciones de entrada
 - [x] Carrito con persistencia local, cantidades y total
+- [x] Datos de contacto y notas antes de enviar el pedido
 - [x] Pedido por WhatsApp, correo o copia al portapapeles
 - [ ] Número de WhatsApp real (al rellenarlo se activa el botón)
 - [ ] Fotos y precios definitivos del catálogo
@@ -72,6 +73,11 @@ assets/brand/     Original de la cartelera y recortes de trabajo
 La cesta se guarda en `localStorage` (clave `cometa:cesta:v1`): sobrevive a
 recargas y se sincroniza entre pestañas. El importe se calcula siempre con los
 precios de `src/data/site.ts`, nunca con lo que haya guardado el navegador.
+
+Antes de enviar, el pedido pasa por un segundo paso donde se piden **nombre y
+teléfono** (obligatorios) y, opcionalmente, correo y notas (talla, dedicatoria,
+fecha…). Los datos se validan, se guardan en el navegador para la próxima compra
+y se incluyen en el mensaje junto al resumen de piezas y el total.
 
 Para activar el botón **Pedir por WhatsApp**, rellena el número en formato
 internacional sin `+` ni espacios:
