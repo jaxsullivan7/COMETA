@@ -39,6 +39,20 @@ El servidor arranca en <http://localhost:4321>.
 | `npm run preview` | Previsualiza el resultado de producción |
 | `npm run check` | Comprobación de tipos de Astro |
 
+### Verla en el móvil
+
+El servidor de desarrollo solo escucha en tu ordenador. Para abrirlo desde un
+teléfono en la misma Wi-Fi:
+
+```powershell
+npm run preview -- --host 0.0.0.0 --port 4322
+```
+
+Y entra desde el móvil en `http://IP-DEL-PC:4322` (por ejemplo
+`http://192.168.1.237:4322`). Si no carga, permite Node.js en el Firewall de
+Windows. Para un túnel público temporal (Cloudflare, ngrok…) ya está activado
+`preview.allowedHosts` en `astro.config.mjs`.
+
 ## Estructura
 
 ```text

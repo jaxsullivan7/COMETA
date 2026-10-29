@@ -11,6 +11,14 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    // Permite abrir la vista previa a través de un túnel (cloudflared, ngrok…).
+    // Solo afecta al servidor local, no al sitio desplegado.
+    preview: {
+      allowedHosts: true,
+    },
+    server: {
+      allowedHosts: true,
+    },
   },
   build: {
     inlineStylesheets: "auto",
