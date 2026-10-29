@@ -2,9 +2,16 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
-// TODO: cuando exista dominio definitivo, añadir `site: "https://cometa.es"`.
-// Se usa para canonical, Open Graph y sitemap.
+// Dominio del sitio. En Vercel se toma automáticamente de las variables del
+// sistema; en local se puede forzar con PUBLIC_SITE_URL.
+const vercelUrl =
+  process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+const siteUrl =
+  process.env.PUBLIC_SITE_URL ||
+  (vercelUrl ? `https://${vercelUrl}` : undefined);
+
 export default defineConfig({
+  site: siteUrl,
   prefetch: {
     prefetchAll: true,
     defaultStrategy: "hover",
