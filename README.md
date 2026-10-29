@@ -73,6 +73,8 @@ assets/brand/     Original de la cartelera y recortes de trabajo
 
 La web está pensada primero para el teléfono:
 
+![Vista móvil de COMETA](docs/preview-movil.jpg)
+
 - Barra inferior fija con Inicio, Tienda, Cesta (con contador) y Contacto.
 - Cabecera compacta: menú a la izquierda, logotipo centrado y cesta a la derecha.
 - Categorías en carrusel horizontal y filtros deslizables.
