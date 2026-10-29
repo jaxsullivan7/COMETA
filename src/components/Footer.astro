@@ -1,0 +1,98 @@
+---
+import { categorias, enlaces } from "../data/site";
+
+const anio = new Date().getFullYear();
+---
+
+<footer class="border-t border-gold/20 bg-cream-deep/45">
+  <div class="container-x py-16 lg:py-20">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div>
+        <a href="/" class="inline-flex flex-col leading-none" aria-label="COMETA, inicio">
+          <span class="script text-[3rem] text-gold">Cometa</span>
+          <span
+            class="mt-1 flex items-center gap-2 text-[0.5rem] font-semibold uppercase tracking-[0.32em] text-ink-soft"
+          >
+            <span class="h-px w-5 bg-gold/50"></span>
+            Boutique infantil
+            <span class="h-px w-5 bg-gold/50"></span>
+          </span>
+        </a>
+
+        <p class="mt-6 max-w-xs text-sm leading-relaxed text-ink-soft">
+          Ropa para cada etapa de su historia. Prendas suaves, atemporales y
+          pensadas para acompañar el crecimiento.
+        </p>
+
+        <a
+          href={enlaces.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-6 inline-flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-gold-deep"
+        >
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.3"></rect>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.3"></circle>
+            <circle cx="17.2" cy="6.8" r="1" fill="currentColor"></circle>
+          </svg>
+          Síguenos
+        </a>
+      </div>
+
+      <nav aria-label="Tienda">
+        <h2 class="text-[0.62rem] font-bold uppercase tracking-[0.28em] text-ink-muted">
+          Tienda
+        </h2>
+        <ul class="mt-5 space-y-3 text-sm text-ink-soft">
+          {categorias.map((categoria) => (
+            <li>
+              <a class="transition-colors hover:text-gold-deep" href={`/tienda/${categoria.slug}`}>
+                {categoria.nombre}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a class="transition-colors hover:text-gold-deep" href="/tienda">
+              Toda la colección
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Ayuda">
+        <h2 class="text-[0.62rem] font-bold uppercase tracking-[0.28em] text-ink-muted">
+          Ayuda
+        </h2>
+        <ul class="mt-5 space-y-3 text-sm text-ink-soft">
+          <li><a class="transition-colors hover:text-gold-deep" href="/contacto">Contacto</a></li>
+          <li><a class="transition-colors hover:text-gold-deep" href="/contacto#envios">Envíos</a></li>
+          <li><a class="transition-colors hover:text-gold-deep" href="/contacto#devoluciones">Devoluciones</a></li>
+          <li><a class="transition-colors hover:text-gold-deep" href="/contacto#tallas">Guía de tallas</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Legal">
+        <h2 class="text-[0.62rem] font-bold uppercase tracking-[0.28em] text-ink-muted">
+          Legal
+        </h2>
+        <ul class="mt-5 space-y-3 text-sm text-ink-soft">
+          <li><a class="transition-colors hover:text-gold-deep" href="/legal/aviso-legal">Aviso legal</a></li>
+          <li><a class="transition-colors hover:text-gold-deep" href="/legal/privacidad">Privacidad</a></li>
+          <li><a class="transition-colors hover:text-gold-deep" href="/legal/cookies">Cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hairline my-10"></div>
+
+    <div
+      class="flex flex-col items-center justify-between gap-3 text-[0.65rem] uppercase tracking-[0.18em] text-ink-muted sm:flex-row"
+    >
+      <p>© {anio} COMETA · Boutique infantil</p>
+      <p class="flex items-center gap-2">
+        <span>Hecho con cariño en España</span>
+        <span aria-hidden="true" class="text-blush">♥</span>
+      </p>
+    </div>
+  </div>
+</footer>

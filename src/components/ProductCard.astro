@@ -1,0 +1,85 @@
+---
+import type { Producto } from "../data/site";
+import { categorias } from "../data/site";
+import Star from "./Star.astro";
+
+interface Props {
+  producto: Producto;
+}
+
+const { producto } = Astro.props;
+const categoria = categorias.find((c) => c.slug === producto.categoria);
+
+const paletas = {
+  premama: ["bg-blush-soft", "bg-blush/35", "bg-cream-deep/80"],
+  bebes: ["bg-cream-deep/80", "bg-gold-soft/50", "bg-blush-soft/70"],
+  ninos: ["bg-sage-soft", "bg-sage/30", "bg-cream-deep/70"],
+} as const;
+
+const [fondo, piezaA, piezaB] = paletas[producto.categoria];
+---
+
+<article
+  class="card-lift group overflow-hidden rounded-[1.4rem] border border-gold/15 bg-cream-soft"
+  data-categoria={producto.categoria}
+>
+  <div class={`relative aspect-[4/5] overflow-hidden ${fondo}`}>
+    <!-- Composición textil abstracta mientras no hay fotos reales -->
+    <div
+      class="absolute inset-0 opacity-90 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+      aria-hidden="true"
+    >
+      <div
+        class={`absolute left-[18%] top-[22%] h-[46%] w-[42%] -rotate-[9deg] rounded-[2.5rem] ${piezaA} shadow-[0_18px_30px_-22px_rgba(66,48,31,0.45)]`}
+      >
+      </div>
+      <div
+        class={`absolute left-[40%] top-[34%] h-[42%] w-[38%] rotate-[7deg] rounded-[2.5rem] ${piezaB} shadow-[0_18px_30px_-24px_rgba(66,48,31,0.4)]`}
+      >
+      </div>
+      <div class="absolute left-1/2 top-[30%] h-24 w-px -translate-x-1/2 bg-gold/25"></div>
+    </div>
+
+    <Star
+      class="absolute right-5 top-5 h-3.5 w-3.5 text-gold/60 transition-transform duration-700 group-hover:rotate-45"
+    />
+
+    <span
+      class="absolute left-4 top-4 rounded-full border border-gold/25 bg-cream/80 px-3 py-1 text-[0.55rem] font-bold uppercase tracking-[0.16em] text-gold-deep backdrop-blur"
+    >
+      {categoria?.nombre}
+    </span>
+
+    <span
+      class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-cream/75 px-3 py-1 text-[0.48rem] font-semibold uppercase tracking-[0.2em] text-ink-muted backdrop-blur"
+    >
+      Foto próximamente
+    </span>
+  </div>
+
+  <div class="p-5">
+    <h3 class="font-display text-xl text-ink">{producto.nombre}</h3>
+    <p class="mt-1.5 text-[0.8rem] leading-relaxed text-ink-soft">
+      {producto.descripcion}
+    </p>
+
+    <div class="mt-4 flex items-center justify-between border-t border-gold/12 pt-4">
+      <span class="text-[0.62rem] font-bold uppercase tracking-[0.18em] text-ink-muted">
+        Precio próximamente
+      </span>
+      <span
+        class="grid h-8 w-8 place-items-center rounded-full border border-gold/25 text-gold-deep transition-colors duration-300 group-hover:bg-gold group-hover:text-cream-soft"
+        aria-hidden="true"
+      >
+        <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M5 12h14M13 6l6 6-6 6"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </span>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TiendaView from "../../components/TiendaView.astro";
+import { categorias } from "../../data/site";
+
+export function getStaticPaths() {
+  return categorias.map((categoria) => ({
+    params: { categoria: categoria.slug },
+    props: { categoria },
+  }));
+}
+
+const { categoria } = Astro.props;
+---
+
+<BaseLayout
+  title={`Ropa de ${categoria.nombre}`}
+  description={`${categoria.descripcion} Colección de ${categoria.nombre.toLowerCase()} de COMETA (${categoria.rango}).`}
+>
+  <TiendaView
+    categoriaActiva={categoria.slug}
+    titulo={categoria.nombre}
+    entradilla={`${categoria.rango} · COMETA`}
+    descripcion={categoria.descripcion}
+  />
+</BaseLayout>
